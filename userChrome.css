@@ -1,5 +1,3 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
-
 /* 
  * 2020/01/08: Updated for Firefox v72.0.
  * 2019/12/04: Updated for Firefox v71.0.
@@ -10,6 +8,20 @@
  * 
  * All credit to Aris-t2!
 */
+
+/* Firefox Quantum userChrome.css tweaks ********************************************************/
+/* code mostly taken from 'Classic Theme Restorer' & 'Classic Toolbar Buttons' add-ons **********/
+/* Github: https://github.com/aris-t2/customcssforfx ********************************************/
+/************************************************************************************************/
+
+
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+/* NOTE  ********************************************************************************/
+/* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
 
 :root {
   --colored_menubar_background_image: linear-gradient(#f9f9fa,#f9f9fa);
@@ -319,13 +331,18 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 
 }
 
+/* trog */
 /* tab text colors */
+/*
 #TabsToolbar:not(:-moz-lwtheme) .tabbrowser-tab {
   color: var(--classic_squared_tabs_tab_text_color) !important;
   text-shadow: 1px 1px 1px var(--classic_squared_tabs_tab_text_shadow) !important;
 }
+*/
 
+/* trog */
 /* fix Windows 7s default tab background (remove dark purple bg color)*/
+/*
 @media (-moz-os-version: windows-win7) {
   @media (-moz-windows-default-theme) {
     .tabbrowser-tab:not([selected]):not(:hover):not(:-moz-lwtheme) {
@@ -337,26 +354,35 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 
   }
 }
+*/
 
+
+/* trog */
 /* Simple Close Tab button */
+/*
 #TabsToolbar:not(:-moz-lwtheme) #_fe8cab45-aaee-45f8-8765-781e0ebea300_-browser-action {
   --webextension-toolbar-image-light: url("moz-extension://7904448c-2319-4f6f-aac9-a1f701258098/icons/Close-dark.svg") !important;
 }
+*/
 
+/* trog */
 /* close tab button */
+/*
 #TabsToolbar:not(:-moz-lwtheme) #closetab_fmarin_com-browser-action {
   --webextension-toolbar-image-light: url("moz-extension://31006e48-8e00-476f-8ea9-697e40934b02/icons/icon.svg") !important;
   --webextension-toolbar-image-2x-light: url("moz-extension://31006e48-8e00-476f-8ea9-697e40934b02/icons/icon.svg") !important;
 }
+*/
 
+/* trog */
 /* close window button */
+/*
 #TabsToolbar:not(:-moz-lwtheme) #close-window-button_nanpuyue_com-browser-action {
   --webextension-toolbar-image-light: url("moz-extension://c914bd13-793f-4a2d-ab66-c655a3d75c52/icons/icon.svg") !important;
   --webextension-toolbar-image-2x-light: url("moz-extension://c914bd13-793f-4a2d-ab66-c655a3d75c52/icons/icon.svg") !important;
 }
+*/
 
-/* [!] NOT A STANDALONE FILE! */
-/* [!] This code does not achieve the requested result without above files content! */
 
 #main-window:not([chromehidden*="toolbar"]) #navigator-toolbox {
   padding-bottom: calc(1px + var(--tab-min-height_tnot)) !important;
@@ -373,7 +399,9 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
   width: 100vw !important;
 }
 
+/* trog */
 /* make sure button icon colors set correctly */
+/*
 #main-window:not(:-moz-lwtheme) #TabsToolbar-customization-target toolbarbutton .toolbarbutton-icon,
 #main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-darktext #TabsToolbar-customization-target toolbarbutton .toolbarbutton-icon {
   fill: var(--classic_squared_tabs_new_tab_icon_color) !important;
@@ -381,27 +409,35 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 }
 
 #main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar .titlebar-buttonbox-container {
-  /*display: none !important;*/
   visibility: hidden !important;
 }
+*/
 
 
+/* trog */
 /* move caption buttons to windows top right position */
+/*
 #main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
   position: fixed !important;
   right: 0 !important;
   visibility: visible !important;
   display: block !important;
 }
+*/
 
+/* trog */
 /* caption button position in maximized mode after moving to the top */
+/*
 #main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container,
 #main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #TabsToolbar .titlebar-buttonbox-container {
   top: -14px !important;
 }
+*/
 
 
+/* trog */
 /* Windows */
+/*
 @media (-moz-os-version:windows-win10), (-moz-os-version:windows-win8), (-moz-os-version:windows-win7) {
 	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
 	  top: 1px !important;
@@ -410,8 +446,11 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 	  top: 8px !important;
 	}
 }
+*/
 
+/* trog */
 /* Windows 7/8 extra tweaks */
+/*
 @media (-moz-os-version: windows-win7) {
   @media all and (-moz-windows-compositor) {
 	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
@@ -440,6 +479,7 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 	  top: -5px !important;
 	}
 }
+*/
 
 
 /* Windows 10 extra tweaks */
@@ -451,14 +491,18 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
   }
 }
 
+/* trog */
 /* tweaks for fullscreen mode */
+/*
 #main-window[tabsintitlebar][sizemode="fullscreen"] #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container,
 #main-window[tabsintitlebar][sizemode="fullscreen"] #navigator-toolbox #PanelUI-button,
 #main-window #TabsToolbar #window-controls {
   display: none !important;
 }
 
+/* trog */
 /* hide non-required items */
+/*
 #TabsToolbar .private-browsing-indicator,
 #TabsToolbar #window-controls,
 #TabsToolbar *[type="caption-buttons"],
@@ -466,6 +510,7 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 #TabsToolbar *[type="post-tabs"] {
   display: none !important;
 }
+*/
 
 /* adjust private mode icon position */
 @media (-moz-os-version:windows-win10), (-moz-os-version:windows-win8), (-moz-os-version:windows-win7) {
@@ -481,7 +526,9 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 	}
 }
 
+/* trog */
 /* adjust tabs toolbar padding */
+/*
 #main-window:-moz-any([sizemode="normal"],[sizemode="maximized"],[sizemode="fullscreen"]) #navigator-toolbox #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
 #main-window[tabsintitlebar]:-moz-any([sizemode="normal"],[sizemode="maximized"],[sizemode="fullscreen"]) #navigator-toolbox #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
 #main-window:-moz-any([sizemode="normal"],[sizemode="maximized"],[sizemode="fullscreen"]) #navigator-toolbox #TabsToolbar,
@@ -489,15 +536,21 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
  -moz-padding-start: 0px !important;
  -moz-margin-start: 0px !important;
 }
+*/
 
+/* trog */
 /* hide line above navigation toolbar appearing in some cases */
+/*
 #main-window:not([tabsintitlebar]) #nav-bar,
 #main-window:not([tabsintitlebar]) #navigator-toolbox {
   border-top: 0 !important;
   box-shadow: unset !important;
 }
+*/
 
+/* trog */
 /* disable Mozillas tab jumping nonsense when moving tabs */
+/*
 #navigator-toolbox[movingtab] > #titlebar > #TabsToolbar {
   padding-bottom: unset !important;
 }
@@ -508,25 +561,33 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 #navigator-toolbox[movingtab] > #nav-bar {
   margin-top: unset !important;
 }
+*/
 
+/* trog */
 /* size of new tab tabs '+' icon */
+/*
 :-moz-any(.tabs-newtab-button,#tabs-newtab-button) .toolbarbutton-icon {
   padding: 0px !important;
   margin: 0px !important;
   width: 18px !important;
   height: 18px !important;
 }
+*/
 
+/* trog */
 /* some id!ot at Moz thought it is a great idea to add padding and margin values here */
+/*
 @media (-moz-os-version:windows-win8), (-moz-os-version:windows-win7) {
   #TabsToolbar > .toolbar-items {
     padding-top: 0 !important;
 	margin-top: 0 !important;
   }
 }
+*/
 
-
+/* trog */
 /* show window caption buttons in fullscreen mode */
+/*
 #main-window:not([inDOMFullscreen="true"])[sizemode="fullscreen"] #TabsToolbar #window-controls {
   position: absolute !important;
   display: block !important;
@@ -559,6 +620,7 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 	}
 
 }
+*/
 
 /*
 @media (-moz-os-version:windows-win8), (-moz-os-version:windows-win7) {
@@ -596,9 +658,12 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
   color: var(--classic_squared_tabs_new_tab_icon_color) !important;
 }
 
-/* Fx72+ fix */
 #TabsToolbar {
   min-height: 0 !important;
   height: var(--tab-min-height_tnot) !important;
   max-height: unset !important;
 }
+
+
+/* Create a new file "my_userChrome.css" and add own/custom code to it. *************************/
+@import "./my_userChrome.css"; /**/
