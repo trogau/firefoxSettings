@@ -1,7 +1,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
 
 /* 
- * 2019/12/4: Updated for Firefox v71.0.
+ * 2020/01/08: Updated for Firefox v72.0.
+ * 2019/12/04: Updated for Firefox v71.0.
  * 
  * The following settings are simply glued together from the various files that make up the "tabs below navigation" from the 
  * most excellent Custom CSS tweaks for Firefox Quantum: https://github.com/Aris-t2/CustomCSSforFx .
@@ -354,6 +355,9 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
   --webextension-toolbar-image-2x-light: url("moz-extension://c914bd13-793f-4a2d-ab66-c655a3d75c52/icons/icon.svg") !important;
 }
 
+/* [!] NOT A STANDALONE FILE! */
+/* [!] This code does not achieve the requested result without above files content! */
+
 #main-window:not([chromehidden*="toolbar"]) #navigator-toolbox {
   padding-bottom: calc(1px + var(--tab-min-height_tnot)) !important;
 }
@@ -565,6 +569,9 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 
 /**/
 
+/* [!] NOT A STANDALONE FILE! */
+/* [!] This code does not achieve the requested result without above files content! */
+
 #TabsToolbar,
 #main-window:not([style*='--lwt-header-image']):-moz-lwtheme-brighttext #TabsToolbar:-moz-lwtheme, 
 #main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #TabsToolbar:-moz-lwtheme {
@@ -578,4 +585,20 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
 .urlbarView:not(.megabar),
 #urlbar-results {
   z-index: 100 !important;
+}
+
+/* Fx71+ fix */
+:-moz-any(.tabs-newtab-button,#tabs-newtab-button,.scrollbutton-up,.scrollbutton-down):not(:-moz-lwtheme),
+:-moz-any(.tabs-newtab-button,#tabs-newtab-button,.scrollbutton-up,.scrollbutton-down):-moz-lwtheme-darktext,
+.tabbrowser-arrowscrollbox::part(scrollbutton-up),
+.tabbrowser-arrowscrollbox::part(scrollbutton-down) {
+  fill: var(--classic_squared_tabs_new_tab_icon_color) !important;
+  color: var(--classic_squared_tabs_new_tab_icon_color) !important;
+}
+
+/* Fx72+ fix */
+#TabsToolbar {
+  min-height: 0 !important;
+  height: var(--tab-min-height_tnot) !important;
+  max-height: unset !important;
 }
