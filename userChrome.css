@@ -1,4 +1,5 @@
 /* 
+ * 2021/06/02: Updated for Firefox v89.0; added yochaym's code from this github issue: https://github.com/Aris-t2/CustomCSSforFx/issues/344
  * 2020/01/08: Updated for Firefox v72.0.
  * 2019/12/04: Updated for Firefox v71.0.
  * 
@@ -6,7 +7,8 @@
  * most excellent Custom CSS tweaks for Firefox Quantum: https://github.com/Aris-t2/CustomCSSforFx .
  * This may include other settings that change other display elements; I have not gone through it closely. 
  * 
- * All credit to Aris-t2!
+ * 
+ * All credit to Aris-t2 & the other contributors!
 */
 
 /* Firefox Quantum userChrome.css tweaks ********************************************************/
@@ -664,6 +666,24 @@ toolbar:not(#TabsToolbar):not(#toolbar-menubar):not(#nav-bar):not(:-moz-lwtheme)
   max-height: unset !important;
 }
 
+#navigator-toolbox {
+  position: relative;
+}
+
+.tabbrowser-tab {
+  height: calc(var(--tab-min-height_tnot) + 1px);
+}
+
+@media (-moz-proton) {
+  #TabsToolbar {
+--tab-min-height: calc(var(--tab-min-height_tnot) + 1px);
+--toolbarbutton-inner-padding: 4.5px !important;
+  }
+
+  .tab-content {
+height: 90%;
+  }
+}
 
 /* Create a new file "my_userChrome.css" and add own/custom code to it. *************************/
 @import "./my_userChrome.css"; /**/
